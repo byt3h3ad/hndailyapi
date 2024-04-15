@@ -6,12 +6,12 @@ type Link = {
 	comments: string | undefined;
 };
 
-type Result = {
+type DayData = {
 	heading: string;
 	links: Link[];
 };
 
-const fetchDayData = async (date: string): Promise<Result> => {
+const fetchDayData = async (date: string): Promise<DayData> => {
 	const url = `https://www.daemonology.net/hn-daily/${date}.html`;
 	const data = await (await fetch(url)).text();
 	const $ = cheerio.load(data);
