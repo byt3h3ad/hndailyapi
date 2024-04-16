@@ -110,7 +110,9 @@ ExpressJS, Typescript.
 ## Usage/Examples
 
 ```http
-GET /date/2024-04-14
+GET /day/2024-04-14
 ```
 
-
+```http
+GET /month/2024-04
+```
