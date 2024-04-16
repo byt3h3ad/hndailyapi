@@ -1,6 +1,6 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "builds": [{ "src": "src/index.ts", "use": "@now/node" }],
+  "builds": [{ "src": "src/index.ts", "use": "@vercel/node" }],
   "rewrites": [{ "source": "/(.*)", "destination": "/src/index.ts" }]
 }
