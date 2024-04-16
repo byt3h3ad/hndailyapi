@@ -1,6 +1,17 @@
 {
-  "version": 2,
-  "cleanUrls": true,
-  "builds": [{ "src": "src/index.ts", "use": "@vercel/node" }],
-  "rewrites": [{ "source": "/(.*)", "destination": "/src/index.ts" }]
+	"version": 2,
+	"cleanUrls": true,
+	"builds": [
+		{
+			"src": "dist/index.js",
+			"use": "@vercel/node",
+			"config": { "includeFiles": ["dist/**"] }
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "dist/index.js"
+		}
+	]
 }
