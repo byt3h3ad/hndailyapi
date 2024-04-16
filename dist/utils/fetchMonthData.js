@@ -13,7 +13,8 @@ const fetchMonthData = async (month) => {
             const $link = $(el).find(".storylink > a");
             const link = $link.attr("href");
             const title = $link.text();
-            const comments = $(el).find(".postlink > a").attr("href");
+            const comments = $(el).find(".postlink > a").attr("href") ||
+                $(el).find(".commentlink > a").attr("href");
             return { title, link, comments };
         })
             .get();
