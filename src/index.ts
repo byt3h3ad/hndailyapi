@@ -1,11 +1,13 @@
 import express from "express";
-import helmet from "helmet";
+import { helmet } from "./middlewares/helmet.js";
 import Day from "./routers/day.js";
 import Month from "./routers/month.js";
 
 const app = express();
 const port = 3000;
-app.use(helmet());
+
+app.disable("x-powered-by");
+app.use(helmet);
 
 app.use("/month", Month);
 

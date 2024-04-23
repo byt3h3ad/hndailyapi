@@ -15,12 +15,12 @@ const checker = (dateString) => {
 };
 export const getMonth = async (req, res) => {
     if (!req.params.month || !validateMonth(req.params.month)) {
-        return res.status(400).json({ error: "Invalid params - stick to YYYY-MM form." });
+        return res
+            .status(400)
+            .json({ error: "Invalid params - stick to YYYY-MM form." });
     }
     if (checker(req.params.month)) {
-        return res
-            .status(404)
-            .json({
+        return res.status(404).json({
             error: "Input should be between 2010-07 and the current month in YYYY-MM form.",
         });
     }
