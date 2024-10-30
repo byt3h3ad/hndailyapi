@@ -24,12 +24,10 @@ export const getDate = async (req: Request, res: Response) => {
 			.json({ error: "Invalid params - stick to YYYY-MM-DD format." });
 	}
 	if (!checker(req.params.date)) {
-		return res
-			.status(404)
-			.json({
-				error:
-					"Input should be between yesterday and 2010-07-11 in YYYY-MM-DD format.",
-			});
+		return res.status(404).json({
+			error:
+				"Input should be between yesterday and 2010-07-11 in YYYY-MM-DD format.",
+		});
 	}
 	res.status(200).json(await fetchDayData(req.params.date));
 };

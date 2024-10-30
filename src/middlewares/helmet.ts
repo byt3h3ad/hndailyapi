@@ -1,6 +1,9 @@
 import type { NextFunction, Request, Response } from "express";
 
 const HEADERS = {
+	"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Methods": "GET",
+	"Access-Control-Allow-Headers": "Content-Type",
 	"Content-Security-Policy":
 		"default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
 	"Cross-Origin-Opener-Policy": "same-origin",
